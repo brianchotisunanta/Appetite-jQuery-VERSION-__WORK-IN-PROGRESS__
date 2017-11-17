@@ -13,3 +13,7 @@ var Restaurant = function(id, name, address1, address2, city, state, zipcode,pho
 }
 
 var restaurantList = [];
+
+// restaurantList.push(new Restaurant(restaurantId++, "name", "address1", "address2", "city", "state", zipcode, "phoneNumber", "website"))
+
+restaurantList.push(new Restaurant(restaurantId++, "Thai Dishes on Broadway", "123 Broadway", "", "Santa Monica", "CA", 90401, "(310) 394-6189", "thaidishessantamonica.com"));
