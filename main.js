@@ -120,3 +120,73 @@ $("update-button").click(function() {
     showRestaurantInfo();
   }
 })
+
+
+
+// showRestaurantInfo() = shows the list of restaurants in the view:
+var showRestaurantInfo = function() {
+  $(".restaurant-list-content col-md-12").html(" ")
+
+// Restaurant heading:
+  var $restaurantHeading = $("<div class="restaurants-heading text-center"></div>");
+  var $restaurantTitle = $("<h1 class="restaurant-title">Favorite Restaurants</h1>");
+
+// Restaurant Info:
+  var $restaurantContent = $(".restaurant-list-content");
+
+  for (var i = 0; i < restaurantList.length; i++) {
+    // Instantiating the HTML element in the DOM with jQuery:
+    var $restaurantInfo = $("<div class="restaurant-info clearfix col-md-6 col-md-offset-3"</div>");
+    var $restaurantId = $("<h3 class="col-md-12" id="restaurant-id"><span>id: </span>{{restaurantList[i].id}}</h3>");
+    var $restaurantName = $("<h2 class="col-md-12">{{restaurantList[i].name}} </h2>");
+    var $restaurantAddress1 = $("<p class="col-md-12"><span>Address 1: </span>{{restaurantList[i].address1}}</p>");
+    var $restaurantAddress2 = $("<p class="col-md-12"><span>Address 2: </span>{{restaurantList[i].address2}}</p>");
+    var $restaurantCity = $("<p class="col-md-12"><span>City: </span>{{restaurantList[i].city}}</p>");
+    var $restaurantState = $("<p class="col-md-12"><span>State: </span>{{restaurantList[i].state}}</p>");
+    var $restaurantZipcode = $("<p class="col-md-12"><span>Zipcode: </span>{{restaurantList[i].zipcode}}</p>");
+    var $restaurantPhoneNumber = $("<p class="col-md-12"><span>Phone Number: </span> {{restaurantList[i].phoneNumber}}</p>");
+    var $restaurantWebsite = $("<p class="col-md-12"><span>Website: </span>{{restaurantList[i].website}}</p>");
+
+    // UPDATE And DELETE Buttons:
+    var $buttonsUpdateAndDelete = $("<div class="buttons-update-delete col-md-12"></div>")
+    var $update = $("<button type="button" class='btn btn-info col-md-4' data=" + i + "> Update</button>")
+    var $delete = $("<button type="button" class='btn btn-info col-md-4' data=" + i + "> Delete</button>")
+
+    // Building the restaurant Content to display to the view:
+    $restaurantHeading.append($restaurantTitle);
+
+    $restaurantInfo.append($restaurantId);
+    $restaurantInfo.append($restaurantName);
+    $restaurantInfo.append($restaurantAddress1)
+    $restaurantInfo.append($restaurantAddress2)
+    $restaurantInfo.append($restaurantCity);
+    $restaurantInfo.append($restaurantState);
+    $restaurantInfo.append($restaurantZipcode);
+    $restaurantInfo.append($restaurantPhoneNumber);
+    $restaurantInfo.append($restaurantWebsite);
+
+    $buttonsUpdateAndDelete.append($update);
+    $buttonsUpdateAndDelete.append($delete);
+    $restaurantInfo.append($buttonsUpdateAndDelete);
+
+    $restaurantContent.append($restaurantHeading);
+    $restaurantContent.append($restaurantInfo);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
