@@ -82,3 +82,41 @@ $("#submit-button").click(function() {
     showRestaurantInfo();
   }
 })
+
+//******************************* UPDATE Button: *******************************
+$("update-button").click(function() {
+  if( $("#name").val() == " " ) {
+    $("#missing-name").show()
+  }
+  else {
+    $("#missing-name").hide()
+
+// Updating the Restaurant info:
+    restaurantList.splice(indexOfRestaurantList, 1, new Restaurant(
+      $("#name").val(),
+      $("#address1").val(),
+      $("#address2").val(),
+      $("#city").val(),
+      $("#state").val(),
+      $("#zipcode").val(),
+      $("#phoneNumber").val(),
+      $("#website").val(),
+    ))
+
+    //Hide the UPDATE button AND Show the SUBMIT button:
+    $("#update-button").hide();
+    $("#submit-button").show();
+
+    //Clearing out the input fields after updating the Restaurant info:
+    $("#name").val(" "):
+    $("#address1").val(" "):
+    $("#address2").val(" "):
+    $("#city").val(" "):
+    $("#state").val(" "):
+    $("#zipcode").val(" "):
+    $("#phoneNumber").val(" "):
+    $("#website").val(" "):
+
+    showRestaurantInfo();
+  }
+})
