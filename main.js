@@ -1,5 +1,7 @@
 var restaurantId = null;
 
+var indexOfRestaurantList = null;
+
 var Restaurant = function(id, name, address1, address2, city, state, zipcode,phoneNumber, website) {
   this.id = id;
   this.name = name;
@@ -37,3 +39,46 @@ restaurantList.push(new Restaurant(restaurantId++, "Kula Revolving Sushi Bar", "
 restaurantList.push(new Restaurant(restaurantId++, "Charleys Philly Steaks", "1065 Brea Mall", "Food Court", "Brea", "CA", 92821, "(714) 674-0115", "charleys.com"))
 
 restaurantList.push(new Restaurant(restaurantId++, "California Fish Grill", "419 S Associated Rd", "", "Brea", "CA", 92821, "(714) 482-2151", "cafishgrill.com"))
+
+// Hiding the missing name message:
+$("#missing-name").hide()
+
+// Hiding the save button:
+$("#save-button").hide()
+
+//************************************ CRUD functionalities ************************************
+
+//******************************* SUBMIT Button: *******************************
+// Will show "fill in missing name" if input field name is submitted blank:
+$("#submit-button").click(function() {
+  if( $("name").val() == " ") {
+    $("#missing-name").show()
+  }
+  else {
+    $("#missing-name").hide()
+
+//CREATE new Restaurant:
+  restaurantList.push(new Restaurant(
+    $("#name").val(),
+    $("#address1").
+    $("#address2").val(),
+    $("#city").val(),
+    $("#state").val(),
+    $("#zipcode").val(),
+    $("#phoneNumber").val(),
+    $("#website").val()
+  ))
+
+// Emptying out the input fields:
+    $("#name").val(" ");
+    $("#address1").val(" ");
+    $("#address2").val(" ");
+    $("#city").val(" ");
+    $("#state").val(" ");
+    $("#zipcode").val(" ");
+    $("#phoneNumber").val(" ");
+    $("#website").val(" ");
+
+    showRestaurantInfo();
+  }
+})
