@@ -137,10 +137,11 @@ span {
   -o-background-size: cover;
   background-size: cover;
   /*width: auto;*/
-
 }
 
 .restaurant-list-content {
+  background-color: #000;
+  padding: 10px;
   margin-bottom: 10px;
   margin: 0 auto;
 }
@@ -161,26 +162,40 @@ span {
 .restaurant-title {
   font-size: 70px;
   color: #c31a0e;
+  padding: 10px;
 }
 
+.restaurant-title:hover {
+  background-color: #d80d00;
+  color: #fff;
+}
+
+/*restaurant title + restaurant address-website:*/
 .restaurant-info {
   margin-bottom: 10px;
+  padding: 10px;
 }
 
 #restaurant-id {
   color: yellow;
 }
 
+/*restaurant title:*/
 .restaurant-info > h2 {
   color: #c31a0e;
   font-size: 34px;
   margin-top: 0px;
+  border-radius: 5px;
+  border: solid yellow;
+  padding: 10px;
 }
 
+/*restaurant address-website:*/
 .restaurant-info > p {
   color: yellow;
   font-size: 20px;
   margin-bottom: 10px;
+  padding: 5px;
 }
 
 span {
@@ -200,6 +215,8 @@ span {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-color: #000;
+  padding: 10px;
 }
 
 /* For the input fields: */
@@ -210,7 +227,7 @@ span {
     padding: 23px 10px;
     font-size: 35px;
     line-height: 1.42857143;
-    color: #000000;
+    color: #000;
     background-color: #fff;
     background-image: none;
     border: 5px solid #FFEB3B;
@@ -232,8 +249,15 @@ span {
 }
 
 .form-heading {
-  color: #53d465;
+  color: #53d465;    /*light green*/
   font-size: 70px;
+}
+
+.form-heading:hover {
+  background-color: #53d465;    /*light green*/
+  color: #fff;
+  font-size: 70px;
+  padding: 10px;
 }
 
 label {
@@ -247,8 +271,8 @@ label {
 /*************************** footer ***************************/
 
 footer {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #d80d00;    /*red*/
   border-top: solid 6px #d80d00;
   padding: 30px;
   /*position: fixed;*/
@@ -256,7 +280,18 @@ footer {
 }
 
 footer:hover {
-  background-color: #d80d00;
+  background-color: #d80d00;    /*red*/
   color: #fff;
   border-top: solid 6px black;
+}
+
+#footer-name, #footer-year {
+  font-size: 37px;
+}
+
+/*FIX THIS:*/
+@media screen and (max-width: 736 px) {
+  #footer-name, #footer-year {
+    font-size: 27px;
+  }
 }
